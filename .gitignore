@@ -1,0 +1,9 @@
+/logs
+/sessions
+/Makefile
+*.old
+*.ERR
+.*
+/blib
+/pm_to_blib
+MYMETA*
