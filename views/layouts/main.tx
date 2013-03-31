@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="<% $settings.charset %>"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=<% $settings.charset %>"/>
+    <meta charset="<% $settings.charset %>"/>
+    <script type="text/javascript" src="<% $request.uri_base %>/scripts/modernizr.js"></script>
+    <title><% $settings.appname %></title>
+    <link rel="stylesheet" type="text/css" href="<% $request.uri_base %>/styles/yui-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<% $request.uri_base %>/styles/app-hannoverpm.css"/>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header-outer">
+      <div id="header-inner" style="background-image: url(<% $request.uri_base %>/images/header-background-hannover-rathaus.jpg);">
+        <!-- header navigation -->
+        <nav id="header-navigation">
+          <ul class="header-navigation">
+            <li><img src="<% $request.uri_base %>/images/oreilly-the-perl-camel-30x33.png" alt="The Camel Image"/></li>
+            <li><span><strong>Hannover.pm Treffen v10</strong> am 09.04.2013 ab 18 Uhr im <a href="http://goo.gl/maps/joiXL">PSV Hannover</a>.</span></li>
+          </ul>
+          <div id="header-navigation-clearing"></div>
+        </nav>
+        <!-- header logo -->
+        <div id="header-logo"><a href="<% $request.uri_base %>/">
+          <h1 id="header-logo-title">Hannover.pm</h1>
+          <p id="header-logo-slogan">Perl Mongers - Perl User Group Hanover, Germany</p>
+        </a></div>
+        <div id="header-inner-clearing"></div>
+      </div>
+    </header>
+    <!-- body -->
+    <div id="main-outer">
+      <div id="main-inner">
+|% $content | raw
+        <div id="main-inner-clearing"></div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer id="footer-outer">
+      <div id="footer-inner">
+        <p>
+          <span>The use of the camel image in association with the Perl language is a trademark of <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> Used with permission.</span>
+          <span><span>Hannover - Rathaus Maschteich</span> von <a href="http://de.wikipedia.org/wiki/Datei:Hannover_-_Rathaus_Maschteich.jpg">Heidas</a> steht unter einer <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.de">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Unported Lizenz</a>.</span>
+        </p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="<% $request.uri_base %>/scripts/jquery.js"></script>
+    <script type="text/javascript" src="<% $request.uri_base %>/scripts/app-hannoverpm.js"></script>
+  </body>
+</html>

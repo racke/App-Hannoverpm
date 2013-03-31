@@ -15,7 +15,7 @@ daemon: 0
 behind_proxy: 0
 
 # app's default Content-Type of outgoing content?
-content_type: 'text/html'
+content_type: 'application/xhtml+xml'
 
 # app's default charset of outgoing content?
 charset: 'utf-8'
@@ -24,7 +24,7 @@ charset: 'utf-8'
 default_mime_type: 'application/data'
 
 # app's template system?
-template: 'simple'
+template: 'xslate'
 
 # app's default layout wrapper when constructing template?
 layout: 'main'
@@ -92,3 +92,14 @@ plugins:
 
 # configure all the template engines.
 engines:
+  xslate:
+    extension: 'tx'
+    cache: 0
+    cache_dir: '.xslate_cache'
+    input_layer: ':utf8'
+    verbose: 2
+    syntax: 'Text::Xslate::Syntax::Kolon'
+    type: 'html'
+    line_start: '|%'
+    tag_start: '<%'
+    tag_end: '%>'

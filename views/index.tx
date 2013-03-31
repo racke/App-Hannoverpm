@@ -1,0 +1,55 @@
+        <section id="main-content" class="no-sidebar">
+          <article>
+            <section>
+                <h2>Willkommen</h2>
+                <p>auf der Übergangshomepage der <abbr title="Perl User Group">Perl Mongers</abbr> Hannover, Deutschland.</p>
+            </section>
+            <section>
+              <h3>IRC, Mailingliste</h3>
+              <p>Wir sind IRC-mäßig auf <a href="http://www.irc.perl.org/">irc.perl.org</a> aktiv. Dort könnt ihr uns im Channel <a href="irc://irc.perl.org:6667/hannover.pm">#hannover.pm</a> finden.</p>
+              <p>Wenn ihr möchtet, könnt ihr gerne unserer <a href="http://mail.pm.org/mailman/listinfo/hannover-pm">Mailingliste</a> beitreten.</p>
+            </section>
+            <section>
+              <h3>Hannover.pm Treffen</h3>
+              <p>Wir organisieren unsere Treffen (vorerst) primär mit <a href="https://www.doodle.com/">Doodle</a>.</p>
+              <ul>
+                <li><span><strong>Hannover.pm Treffen v10</strong> am 09.04.2013 ab 18 Uhr im <a href="http://goo.gl/maps/joiXL">PSV Hannover</a>. <strong>SONDERESSEN:</strong> Bitte meldet euch für das Wild-Menü schnell auf <a href="http://www.doodle.com/57prc9hxdywhpeyx">Doodle</a> an.</span></li>
+                <li>2013-03-26</li>
+                <li>2013-02-28</li>
+                <li>2013-02-13: <a href="http://reneeb-perlblog.blogspot.de/2013/02/hannoverpm-german-perl-tour-teil-1.html">Bericht/Protokoll</a></li>
+                <li>2013-01-29</li>
+                <li>2012-12-04</li>
+                <li>2012-11-20</li>
+                <li>2012-10-30: <a href="http://mail.pm.org/mailman/private/hannover-pm/2012-November/000129.html">Bericht/Protokoll</a></li>
+                <li>2012-10-16: <a href="http://mail.pm.org/mailman/private/hannover-pm/2012-October/000126.html">Bericht/Protokoll</a></li>
+                <li><del>2012-09-22</del></li>
+                <li>2012-09-05: <a href="http://mail.pm.org/mailman/private/hannover-pm/2012-September/000111.html">Bericht/Protokoll</a></li>
+              </ul>
+            </section>
+            <section>
+              <h3>Hannover.pm Hackathon Treffen</h3>
+              <p>Lasst uns zusammen etwas entwerfen. Hackathon Treffen dauern lange, meistens wird das ins Auge gefasste Projekt abgeschlossen. Egal ob es eine Stunde oder zwei Tage braucht. Dazu gibt es lecker Pizza und Cola :D Eine übliche Teilnehmeranzahl ist 3-4 Personen.</p>
+              <ul>
+                <li><em>zukünftig</em> Hackathon v2 Treffen "USB Raketenwerfer": Terminplanung noch nicht verfügbar</li>
+                <li>2013-01-12 - 2013-01-13 Hackathon v1 Treffen "Homepage".</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Soziale Netzwerke</h3>
+              <p>
+                <span>Facebook: <a href="https://www.facebook.com/pages/Hannoverpm/379383308816674">Hannover.pm</a></span>
+                <br/>
+                <span>Google+: <a href="https://plus.google.com/103770494517400555954/">Hannover.pm</a></span>
+                <br/>
+                <span>XING: <a href="https://www.xing.com/net/hannover_pm">Hannover.pm</a></span>
+                <br/>
+                <span>Twitter: <a href="https://twitter.com/Hannover_pm">Hannover_pm</a></span>
+              </p>
+            </section>
+            <section>
+              <h3>Fork us on GitHub</h3>
+              <p>Auf <a href="https://github.com/">GitHub</a> sind wir unter der Organisation <a href="https://github.com/Hannover-pm">Hannover-pm</a> vertreten und unser Homepage-Repository heißt <a href="https://github.com/Hannover-pm/App-Hannoverpm">App-Hannoverpm</a>. Die "Übergangsseite" könnt ihr über den Branch <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/placeholder">placeholder</a> und unsere "richtige" Homepage über <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/devel">devel</a> erreichen. Der Branch <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/master">master</a> spiegelt den produktiven Stand wieder.</p>
+            </section>
+          </article>
+          <div id="main-content-clearing"></div>
+        </section>

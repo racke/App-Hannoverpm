@@ -1,0 +1,256 @@
+/*! App::Hannoverpm - Homepage of Perl Mongers group in Hanover, Germany.
+ * @copyright © 2013, Hannover.pm.
+ * @license http://creativecommons.org/publicdomain/zero/1.0/ CC0 1.0 Universal */
+
+/* Generic ****************************************************************/
+html {
+    background: #FFFFFF;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, Geneva, sans-serif;
+    font-size: 11pt;
+    line-height: 1.45em;
+    color: #333333;
+}
+small {
+    font-size: .75em;
+}
+pre {
+    line-height: inherit;
+}
+code {
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    background: #F8F8F8;
+    border: 1px solid #EAEAEA;
+    border-radius: 3px;
+    margin: 0 .2em;
+    padding: 0 .4em;
+    line-height: inherit;
+}
+pre code {
+    display: block;
+    padding: .4em;
+    margin-left: .4em;
+    margin-right: .4em;
+}
+cite {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+}
+pre cite {
+    display: block;
+    padding: .4em;
+    margin-left: .4em;
+    margin-right: .4em;
+}
+cite:before,
+cite:after {
+    font-size: 1.4em;
+}
+cite:before {
+    content: '„';
+    padding: .1em;
+}
+cite:after {
+    content: '”';
+    padding: .1em;
+}
+a,
+a:link,
+a:hover,
+a:focus,
+a:active {
+    color: #003366;
+    border-bottom: 2px solid #A8BFCF;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    border-bottom-color: #005A9C;
+}
+a:active {
+    border-bottom-color: #dc143c;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #17445F;
+    margin: 1em 0 .5em;
+}
+h1 {
+    font-size: 2.0em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.6em;
+}
+h4 {
+    font-size: 1.4em;
+}
+h5 {
+    font-size: 1.2em;
+}
+h6 {
+    font-size: 1.0em;
+}
+del,
+del * {
+    color: #dc143c !important;
+}
+ins {
+    color: #7cfc00;
+    text-decoration: none;
+    border-bottom: 1px dashed #7cfc00;
+}
+b,
+strong,
+.text-bold {
+    font-style: inherit;
+    font-weight: bold;
+    text-decoration: inherit;
+}
+i,
+em,
+.text-italic {
+    font-style: inherit;
+    font-style: italic;
+    text-decoration: inherit;
+}
+u,
+.text-underline {
+    font-style: inherit;
+    font-style: inherit;
+    text-decoration: underline;
+}
+.text-line-through {
+    font-style: inherit;
+    font-style: inherit;
+    text-decoration: line-through;
+}
+/* header *****************************************************************/
+#header-inner {
+    width: 980px;
+    height: 260px;
+    margin: 0 auto;
+    background: none no-repeat #FFFFFF;
+}
+/* header navigation ******************************************************/
+#header-navigation {
+    background: #000000;
+}
+ul.header-navigation {
+    margin: 0;
+    list-style: none inside;
+}
+ul.header-navigation li {
+    float: left;
+    margin-left: 1em;
+}
+ul.header-navigation a {
+    display: block;
+    border-bottom: none;
+    color: #AAAAAA;
+    padding: .6em .3em;
+}
+ul.header-navigation span a {
+    color: #FFFFFF;
+    padding: 0;
+    display: inline;
+    border-bottom: 2px solid #A8BFCF;
+}
+ul.header-navigation span {
+    display: block;
+    border-bottom: none;
+    color: #FFFFFF;
+    padding: .6em .3em;
+}
+ul.header-navigation img {
+    display: block;
+    padding: 2px 0;
+}
+ul.header-navigation a:hover,
+ul.header-navigation a:focus {
+    color: #FFFFFF;
+}
+ul.header-navigation li.navigation-active a {
+    color: #FFFFFF;
+}
+#header-navigation-clearing {
+    clear: left;
+}
+/* header logo ************************************************************/
+#header-logo-title {
+    font-size: 3em;
+    line-height: 1em;
+    margin: 0 0 0 20pt;
+    padding: 3em 0 0;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 0.1em #333333;
+}
+#header-logo-slogan {
+    font-size: 1em;
+    line-height: 1em;
+    margin: 4pt 0 0 21pt;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 0.1em #333333;
+}
+/* main *******************************************************************/
+#main-inner {
+    width: 980px;
+    margin: 0 auto;
+}
+#main-inner-clearing {
+    clear: left;
+}
+/* main sidebar ***********************************************************/
+#main-sidebar {
+    float: left;
+    width: 220px;
+    margin: 1.8em 0 0;
+}
+/* main sidebar navigation ************************************************/
+#main-navigation {
+    margin: 0 2em 0 0;
+}
+ul.main-navigation {
+    margin: 0;
+    list-style: none inside;
+}
+ul.main-navigation a {
+    display: block;
+    padding: .3em .3em 0;
+}
+ul.main-navigation ul.navigation-sub li {
+    padding: 0 0 0 1em;
+}
+/* main content ***********************************************************/
+#main-content {
+    float: left;
+    width: 760px;
+}
+#main-content.no-sidebar {
+    width: 980px;
+}
+/* footer *****************************************************************/
+#footer-inner {
+    width: 980px;
+    margin: 0 auto;
+    padding: 1em 0;
+    font-size: .75em;
+    border-top: 2px solid #A8BFCF;
+    color: #999999;
+}
+#footer-inner a:link,
+#footer-inner a:visited {
+    color: #999999;
+}
+#footer-inner a:hover,
+#footer-inner a:focus,
+#footer-inner a:active {
+    color: #003366;
+}
