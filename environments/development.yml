@@ -1,27 +1,26 @@
-# configuration file for development environment
+# app should listen to?
+port: 3000
 
-# the logger engine to use
-# console: log messages to STDOUT (your console where you started the
-#          application server)
-# file:    log message to a file in log/
-logger: "console"
+# app should 'use warnings'?
+global_warnings: 1
 
-# the log level for this environment
-# core is the lowest, it shows Dancer's core log messages as well as yours
-# (debug, info, warning and error)
-log: "core"
-
-# should Dancer consider warnings as critical errors?
+# app should consider all warnings as blocking errors?
 warnings: 1
 
-# should Dancer show a stacktrace when an error is caught?
+# app will display full stack traces when a warning or a die occurs?
+traces: 1
+
+# which logger to use?
+logger: 'console'
+
+# which log messages should be actually logged?
+log: 'core'
+
+# app will render a detailed debug screen whenever an error is caught?
 show_errors: 1
 
-# auto_reload is a development and experimental feature
-# you should enable it by yourself if you want it
-# Module::Refresh is needed 
-# 
-# Be aware it's unstable and may cause a memory leak.
-# DO NOT EVER USE THIS FEATURE IN PRODUCTION 
-# OR TINY KITTENS SHALL DIE WITH LOTS OF SUFFERING
+# app will reload the route handlers whenever the file where they are defined is changed?
 auto_reload: 0
+
+# cache route resolution for maximum performance?
+route_cache: 0

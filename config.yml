@@ -1,28 +1,94 @@
-# This is the main configuration file of your Dancer app
-# env-related settings should go to environments/$env.yml
-# all the settings in this file will be loaded at Dancer's startup.
+# app's name?
+appname: 'App::Hannoverpm'
 
-# Your application's name
-appname: "App::Hannoverpm"
+# app should bind to?
+server: '127.0.0.1'
 
-# The default layout to use for your application (located in
-# views/layouts/main.tt)
-layout: "main"
+# app should listen to?
+port: 5000
 
-# when the charset is set to UTF-8 Dancer will handle for you
-# all the magic of encoding and decoding. You should not care
-# about unicode within your app when this setting is set (recommended).
-charset: "UTF-8"
+# app should run in background?
+daemon: 0
 
-# template engine
-# simple: default and very basic template engine
-# template_toolkit: TT
+# app will look to X-Forwarded-Protocol and X-Forwarded-host when
+# constructing URLs?
+behind_proxy: 0
 
-template: "simple"
+# app's default Content-Type of outgoing content?
+content_type: 'text/html'
 
-# template: "template_toolkit"
-# engines:
-#   template_toolkit:
-#     start_tag: '[%'
-#     end_tag:   '%]'
+# app's default charset of outgoing content?
+charset: 'utf-8'
 
+# app's default Content-Type of unknown outgoing content?
+default_mime_type: 'application/data'
+
+# app's template system?
+template: 'simple'
+
+# app's default layout wrapper when constructing template?
+layout: 'main'
+
+# app should return an object instead of a hash reference when config is
+# called.
+strict_config: 0
+
+# app should 'use warnings'?
+global_warnings: 1
+
+# app should display server banner in console and log?
+startup_info: 1
+
+# app should consider all warnings as blocking errors?
+warnings: 0
+
+# app will display full stack traces when a warning or a die occurs?
+traces: 1
+
+# app should add an "X-Powered-By" header and also append the Dancer version
+# to the "Server" header?
+server_tokens: 1
+
+# app will render a detailed debug screen whenever an error is caught?
+show_errors: 0
+
+# which template view should app use when an error is caught?
+#error_template: error
+
+# app will reload the route handlers whenever the file where they are
+# defined is changed?
+# Requires Module::Refresh and Clone.
+# Note that Module::Refresh only operates on files in %INC, so if the script
+# your Dancer app is started from changes, even with auto_reload enabled,
+# you will still not see the changes reflected until you start your app.
+auto_reload: 0
+
+# app's session system?
+# session: 'YAML'
+
+# app's default session expire duration?
+session_expires: '15 minutes'
+
+# session's default cookie name?
+session_name: 'sid'
+
+# session will be available https-only?
+session_secure: 0
+
+# session will NOT be available for JavaScript?
+session_is_http_only: 0
+
+# session should bind to?
+#session_domain: domain.test
+
+# app will use request path to match template view when no route matched?
+auto_page: 0
+
+# cache route resolution for maximum performance?
+route_cache: 1
+
+# configure all the plugins.
+plugins:
+
+# configure all the template engines.
+engines:
