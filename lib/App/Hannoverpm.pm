@@ -13,6 +13,8 @@ use version 0.77; our $VERSION = version->new('v0.1');
 ############################################################################
 # Get use of other Perl modules.
 use Dancer qw( :syntax );
+use HTML::Meta::Robots qw();
+use DateTime qw();
 
 ############################################################################
 sub security_checks {
@@ -44,6 +46,37 @@ sub security_checks {
   return;
 }
 hook before => \&security_checks;
+
+############################################################################
+sub fix_template_tokens {
+  my ($tokens) = @_;
+
+  # Fix Content-Type token.
+  if ( my $content_type = content_type ) {
+    $tokens->{content_type} = $content_type;
+  }
+  else {
+    content_type( $tokens->{content_type} = setting('content_type') );
+  }
+
+  # Fix Content-Charset token.
+  $tokens->{content_charset} = setting 'charset';
+
+  # Fix Content-Language token.
+  $tokens->{content_language} ||= 'de';
+
+  # Fix missing standard tokens.
+  $tokens->{sitename} ||= 'Hannover.pm';
+  $tokens->{content_robots} ||= HTML::Meta::Robots->new->content;
+  $tokens->{content_keywords} ||=
+    q{Perl,Programmiersprache,Mongers,Gruppe,Hannover,Deutschland};
+  $tokens->{content_description} ||=
+    q{Homepage der Perl Monger Gruppe aus Hannover, Deutschland.};
+  $tokens->{content_date} = DateTime->now->ymd;
+
+  return;
+}
+hook before_template_render => \&fix_template_tokens;
 
 ############################################################################
 # Main index route.

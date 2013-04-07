@@ -1,11 +1,25 @@
-<?xml version="1.0" encoding="<% $settings.charset %>"?>
+|% if $content_type == 'application/xhtml+xml' {
+<?xml version="1.0" encoding="<% $content_charset %>"?>
+|% }
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<% $content_language %>" lang="<% $content_language %>">
   <head>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=<% $settings.charset %>"/>
-    <meta charset="<% $settings.charset %>"/>
+    <meta http-equiv="Content-Type" content="<% $content_type %>; charset=<% $content_charset %>" lang="en"/>
+    <meta http-equiv="Content-Language" content="<% $content_language %>"/>
+    <meta charset="<% $content_charset %>" lang="en"/>
     <script type="text/javascript" src="<% $request.uri_base %>/scripts/modernizr.js"></script>
-    <title><% $settings.appname %></title>
+    <title><% if $pagename { $pagename; ' | '; } %><% $sitename %></title>
+    <meta name="keywords" content="<% $content_keywords %>"/>
+    <meta name="description" content="<% $content_description %>"/>
+    <meta name="language" content="<% $content_language %>"/>
+|% if $content_author {
+    <meta name="author" content="<% $content_author %>"/>
+|% }
+    <meta name="publisher" content="Hannover.pm"/>
+    <meta name="generator" content="http://hannover.pm/"/>
+    <meta name="copyright" content="© 2013, Hannover.pm" lang="en"/>
+    <meta name="date" content="<% $content_date %>"/>
+    <meta name="robots" content="<% $content_robots %>" lang="en"/>
     <link rel="stylesheet" type="text/css" href="<% $request.uri_base %>/styles/yui-reset.css"/>
     <link rel="stylesheet" type="text/css" href="<% $request.uri_base %>/styles/app-hannoverpm.css"/>
   </head>
