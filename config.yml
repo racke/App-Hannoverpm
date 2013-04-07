@@ -64,7 +64,7 @@ show_errors: 0
 auto_reload: 0
 
 # app's session system?
-# session: 'YAML'
+session: 'YAML'
 
 # app's default session expire duration?
 session_expires: '15 minutes'
@@ -76,7 +76,7 @@ session_name: 'sid'
 session_secure: 0
 
 # session will NOT be available for JavaScript?
-session_is_http_only: 0
+session_is_http_only: 1
 
 # session should bind to?
 #session_domain: domain.test
