@@ -1,0 +1,6 @@
+            <ul class="main-navigation">
+|% for $nav_item -> $item {
+              <li<% if $item.active { ' class="navigation-active"' | raw } %>><a href="<% $item.link %>"><% $item.label %></a></li>
+|% if $item.items { include main_navigation_ul { nav_item => $item.items }; }
+|% }
+            </ul>

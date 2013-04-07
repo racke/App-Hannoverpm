@@ -225,8 +225,14 @@ ul.main-navigation a {
     display: block;
     padding: .3em .3em 0;
 }
-ul.main-navigation ul.navigation-sub li {
+ul.main-navigation ul.main-navigation {
     padding: 0 0 0 1em;
+}
+ul.main-navigation li.navigation-active a:before {
+  content: '> ';
+}
+ul.main-navigation li.navigation-active a {
+  border-bottom-color: #005A9C;
 }
 /* main content ***********************************************************/
 #main-content {
