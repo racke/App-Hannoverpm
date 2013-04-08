@@ -9,12 +9,19 @@ use strict;
 use warnings FATAL => 'all';
 use utf8;
 use version 0.77; our $VERSION = version->new('v0.1');
+our $VERSION_GIT;
 
 ############################################################################
 # Get use of other Perl modules.
 use Dancer qw( :syntax );
 use HTML::Meta::Robots qw();
 use DateTime qw();
+
+############################################################################
+sub setup {
+  $VERSION_GIT = `git log -1 | grep commit | awk '{print \$2}'`;
+}
+setup;
 
 ############################################################################
 sub security_checks {
@@ -84,6 +91,15 @@ sub get_index_route {
   return template 'index';
 }
 get q{/} => \&get_index_route;
+
+############################################################################
+sub get_uptime_route {
+  content_type 'text/plain'; 
+  return 'uptime: '.(time - $^T)." secs\n"
+    ."version: $VERSION\n"
+    ."github version: $VERSION_GIT"
+}
+get q{/uptime} => \&get_uptime_route;
 
 ############################################################################
 1;
