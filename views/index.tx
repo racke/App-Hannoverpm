@@ -49,7 +49,7 @@
             </section>
             <section>
               <h3>Fork us on GitHub</h3>
-              <p>Auf <a href="https://github.com/">GitHub</a> sind wir unter der Organisation <a href="https://github.com/Hannover-pm">Hannover-pm</a> vertreten und unser Homepage-Repository heißt <a href="https://github.com/Hannover-pm/App-Hannoverpm">App-Hannoverpm</a>. Die "Übergangsseite" könnt ihr über den Branch <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/placeholder">placeholder</a> und unsere "richtige" Homepage über <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/devel">devel</a> erreichen. Der Branch <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/master">master</a> spiegelt den produktiven Stand wieder.</p>
+              <p>Auf <a href="https://github.com/">GitHub</a> sind wir unter der Organisation <a href="https://github.com/Hannover-pm">Hannover-pm</a> vertreten und unser Homepage-Repository heißt <a href="https://github.com/Hannover-pm/App-Hannoverpm">App-Hannoverpm</a>. Der Branch <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/development">development</a> ist für Entwicklungen und <a href="https://github.com/Hannover-pm/App-Hannoverpm/tree/production">production</a> stellt die Produktivversion dar.</p>
             </section>
           </article>
           <div id="main-content-clearing"></div>
