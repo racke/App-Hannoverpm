@@ -184,7 +184,7 @@ ul.header-navigation li.navigation-active a {
     clear: left;
 }
 /* header logo ************************************************************/
-#header-logo-title {
+#header-logo-title, .header-logo-title {
     font-size: 3em;
     line-height: 1em;
     margin: 0 0 0 20pt;
@@ -192,7 +192,7 @@ ul.header-navigation li.navigation-active a {
     color: #FFFFFF;
     text-shadow: 1px 1px 0.1em #333333;
 }
-#header-logo-slogan {
+#header-logo-slogan, .header-logo-slogan {
     font-size: 1em;
     line-height: 1em;
     margin: 4pt 0 0 21pt;
