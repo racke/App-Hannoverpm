@@ -2,7 +2,6 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_AUTO_VALUE_ON_ZERO,NO_ZERO_DATE,NO_ZERO_IN_DATE,STRICT_ALL_TABLES';
 
-DROP SCHEMA IF EXISTS `app_hannoverpm` ;
 CREATE SCHEMA IF NOT EXISTS `app_hannoverpm` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
 SHOW WARNINGS;
 USE `app_hannoverpm` ;
@@ -10,9 +9,6 @@ USE `app_hannoverpm` ;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Languages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Languages` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Languages` (
   `language_id` VARCHAR(20) NOT NULL COMMENT 'RFC-5646 Tags for Identifying Languages' ,
   `native_name` VARCHAR(70) NOT NULL COMMENT 'Language name in the target native language.' ,
@@ -31,9 +27,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Users` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Users` (
   `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Internal numerical user identifier' ,
   `display_name` VARCHAR(25) NULL DEFAULT NULL COMMENT 'Display name e.g. shown in posts, comments or user profile.' ,
@@ -60,9 +53,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Roles`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Roles` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Roles` (
   `role_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Internal numerical role identifier' ,
   `role_name` VARCHAR(25) NOT NULL COMMENT 'Internal role name used in source code' ,
@@ -77,9 +67,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Users_Roles`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Users_Roles` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Users_Roles` (
   `user_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical user identifier' ,
   `role_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical role identifier' ,
@@ -105,9 +92,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Users_OAuth`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Users_OAuth` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Users_OAuth` (
   `user_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical user identifier' ,
   `service` VARCHAR(25) NOT NULL COMMENT 'OAuth service like GitHub, Twitter or Facebook' ,
@@ -129,9 +113,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`News`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`News` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`News` (
   `news_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Internal numerical news identifier' ,
   `publication_datetime` DATETIME NULL DEFAULT NULL COMMENT 'Date and time of final publication' ,
@@ -149,9 +130,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`News_I18N`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`News_I18N` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`News_I18N` (
   `news_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical news identifier' ,
   `language_id` VARCHAR(20) NOT NULL COMMENT 'RFC-5646 Tags for Identifying Languages' ,
@@ -190,9 +168,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Tags`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Tags` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Tags` (
   `tag_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Internal numerical tag identifier' ,
   `has_entries` MEDIUMINT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Number of entries associated to this tag' ,
@@ -208,9 +183,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Tags_Languages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Tags_Languages` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Tags_Languages` (
   `tag_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical tag identifier' ,
   `language_id` VARCHAR(20) NOT NULL COMMENT 'RFC-5646 Tags for Identifying Languages' ,
@@ -239,9 +211,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`News_Tags`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`News_Tags` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`News_Tags` (
   `news_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical news identifier' ,
   `tag_id` INT(10) UNSIGNED NOT NULL COMMENT 'Internal numerical tag identifier' ,
@@ -268,9 +237,6 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `app_hannoverpm`.`Database_Information`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `app_hannoverpm`.`Database_Information` ;
-
-SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `app_hannoverpm`.`Database_Information` (
   `key` VARCHAR(25) NOT NULL ,
   `value` VARCHAR(250) NULL DEFAULT NULL ,
@@ -284,59 +250,3 @@ USE `app_hannoverpm` ;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`Languages`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`Languages` (`language_id`, `native_name`, `english_name`, `german_name`) VALUES ('de-DE', 'Deutsch (Deutschland)', 'German (Germany)', 'Deutsch (Deutschland)');
-INSERT INTO `app_hannoverpm`.`Languages` (`language_id`, `native_name`, `english_name`, `german_name`) VALUES ('en-US', 'English (United States)', 'English (United States)', 'Englisch (USA)');
-INSERT INTO `app_hannoverpm`.`Languages` (`language_id`, `native_name`, `english_name`, `german_name`) VALUES ('en-GB', 'English (United Kingdom)', 'English (United Kingdom)', 'Englisch (Vereinigtes Königreich)');
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`Users`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`Users` (`user_id`, `display_name`, `email`, `prefered_language`, `signup_datetime`, `last_login_datetime`, `has_login_fails`) VALUES (1, 'Administrator', 'admin@localhost.localdomain', 'de-DE', '2013-04-16 14:08:00', NULL, 0);
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`Users_Roles`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`Users_Roles` (`user_id`, `role_id`) VALUES (1, 1);
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`News`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`News` (`news_id`, `publication_datetime`, `has_views`) VALUES (1, '2013-04-16 14:08:00', 0);
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`News_I18N`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`News_I18N` (`news_id`, `language_id`, `subject`, `abstract`, `message`, `has_edits`, `last_edit_datetime`, `last_editor`) VALUES (1, 'de-DE', 'Hallo Welt', 'Die Erstinstallation wurde durchgeführt.', 'Hallo Welt, die Erstinstallation wurde durchgeführt.', 0, NULL, 1);
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `app_hannoverpm`.`Database_Information`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `app_hannoverpm`;
-INSERT INTO `app_hannoverpm`.`Database_Information` (`key`, `value`) VALUES ('schema_version', 'v0.1');
-
-COMMIT;
