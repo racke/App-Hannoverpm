@@ -31,7 +31,7 @@
         <nav id="header-navigation">
           <ul class="header-navigation">
             <li><img src="<% $request.uri_base %>/images/oreilly-the-perl-camel-30x33.png" alt="The Camel Image"/></li>
-            <li><span><strong>Hannover.pm Treffen v11</strong> am 23.04.2013 ab 18 Uhr im <a href="http://goo.gl/maps/joiXL">PSV Hannover</a>. <strong>SONDERESSEN:</strong> Schweine-Bankett.</span></li>
+            <li><span>Hannover.pm - Perl Mongers - Perl programming language</span></li>
           </ul>
           <div id="header-navigation-clearing"></div>
         </nav>
