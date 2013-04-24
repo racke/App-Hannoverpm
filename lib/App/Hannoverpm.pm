@@ -16,6 +16,7 @@ our $VERSION_GIT;
 use Dancer qw( :syntax );
 use HTML::Meta::Robots qw();
 use DateTime qw();
+use GD qw( gdGiantFont gdLargeFont gdMediumBoldFont gdSmallFont gdTinyFont );
 
 ############################################################################
 sub setup {
@@ -100,6 +101,65 @@ sub get_uptime_route {
     ."github version: $VERSION_GIT"
 }
 get q{/uptime} => \&get_uptime_route;
+
+############################################################################
+sub get_gpw2014counter_route {
+  my $language = param 'lang';
+  my $format   = param 'format';
+
+  my $remaining = {};
+  $remaining->{total_secs} = 1395820800 - time;
+  $remaining->{seconds}    = int( $remaining->{total_secs} % 60 );
+  $remaining->{minutes}    = int( ( $remaining->{total_secs} / 60 ) % 60 );
+  $remaining->{hours}      = int( ( $remaining->{total_secs} / ( 60 * 60 ) ) % 24 );
+  $remaining->{days}       = int( $remaining->{total_secs} / ( 24 * 60 * 60 ) );
+
+  my %language = (
+    de => {
+      seconds => 'Sekunden',
+      minutes => 'Minuten',
+      hours   => 'Stunden',
+      days    => 'Tage',
+    },
+    en => {
+      seconds => 'seconds',
+      minutes => 'minutes',
+      hours   => 'hours',
+      days    => 'days',
+    },
+  );
+
+  if ( $format eq 'txt' ) {
+    content_type 'text/plain';
+    foreach my $type (qw( days hours minutes seconds )) {
+      if ( $remaining->{$type} ) {
+        return sprintf '%d %s', $remaining->{$type}, $language{$language}->{$type};
+      }
+    }
+
+  }
+  elsif ( $format eq 'png' ) {
+    content_type 'image/png';
+    foreach my $type (qw( days hours minutes seconds )) {
+      if ( $remaining->{$type} ) {
+        my $text = sprintf '%d %s', $remaining->{$type}, $language{$language}->{$type};
+        my $im = GD::Image->new( 120, 20 );
+        my $white = $im->colorAllocate( 255, 255, 255 );
+        my $black = $im->colorAllocate( 0,   0,   0 );
+        my $red   = $im->colorAllocate( 255, 0,   0 );
+        my $blue  = $im->colorAllocate( 0,   0,   255 );
+        $im->transparent($white);
+        $im->interlaced('true');
+        $im->string( gdGiantFont, 4, 2, $text, $blue );
+        return $im->png;
+      }
+    }
+
+  }
+  status 404;
+  return;
+}
+get q{/gpw2014/counter-:lang.:format} => \&get_gpw2014counter_route;
 
 ############################################################################
 1;
