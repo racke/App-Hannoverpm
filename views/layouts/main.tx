@@ -31,7 +31,7 @@
         <nav id="header-navigation">
           <ul class="header-navigation">
             <li><img src="<% $request.uri_base %>/images/oreilly-the-perl-camel-30x33.png" alt="The Camel Image"/></li>
-            <li><span><strong>Hannover.pm Treffen v17</strong> am 16.07.2013 ab 18 Uhr bei <a href="http://goo.gl/maps/XcIoy">Delticom AG</a></span></li>
+            <li><span><strong>Hannover.pm Treffen v18</strong> am 30.07.2013 ab 18 Uhr bei <a href="http://goo.gl/maps/XcIoy">Delticom AG</a></span></li>
           </ul>
           <div id="header-navigation-clearing"></div>
         </nav>
