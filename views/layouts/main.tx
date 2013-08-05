@@ -60,7 +60,7 @@
       </div>
     </footer>
     <script type="text/javascript">
-      var uri = '<% $request.uri %>';
+      var uri = '<% if $request.uri { $request.uri } else { "/" | raw } %>';
       var uri_base = '<% $request.uri_base %>';
     </script>
     <script type="text/javascript" src="<% $request.uri_base %>/scripts/jquery.js"></script>

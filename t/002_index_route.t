@@ -12,20 +12,22 @@ use utf8;
 # Get use of other Perl modules.
 use Test::More tests => 1 + 2;
 use Test::NoWarnings;
-use App::Hannoverpm qw();
-use Dancer::Test qw( route_exists response_status_is );
+
+use App::Hannoverpm;
+use Dancer::Test;
+use Data::Dumper;
 
 ############################################################################
 # Main index route.
 route_exists(
   [ GET => q{/} ],
   q{Main index route handler exists},
-);
+) or diag Dumper read_logs;
 response_status_is(
   [ GET => q{/} ],
   200,
   q{Main index route handler HTTP status is 200},
-);
+) or diag Dumper read_logs;
 
 ############################################################################
 1;
