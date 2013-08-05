@@ -20,7 +20,7 @@ use GD qw( gdGiantFont gdLargeFont gdMediumBoldFont gdSmallFont gdTinyFont );
 
 ############################################################################
 sub setup {
-  $VERSION_GIT = `git log -1 | grep commit | awk '{print \$2}'`;
+  $VERSION_GIT = scalar(`git log -1`) =~ m/commit:? ([a-zA-Z0-9]+)/ ? $1 : 'UNKNOWN';
 }
 setup;
 
@@ -74,12 +74,10 @@ sub fix_template_tokens {
   $tokens->{content_language} ||= 'de';
 
   # Fix missing standard tokens.
-  $tokens->{sitename} ||= 'Hannover.pm';
-  $tokens->{content_robots} ||= HTML::Meta::Robots->new->content;
-  $tokens->{content_keywords} ||=
-    q{Perl,Programmiersprache,Mongers,Gruppe,Hannover,Deutschland};
-  $tokens->{content_description} ||=
-    q{Homepage der Perl Monger Gruppe aus Hannover, Deutschland.};
+  $tokens->{sitename}            ||= 'Hannover.pm';
+  $tokens->{content_robots}      ||= HTML::Meta::Robots->new->content;
+  $tokens->{content_keywords}    ||= q{Perl,Programmiersprache,Mongers,Gruppe,Hannover,Deutschland};
+  $tokens->{content_description} ||= q{Homepage der Perl Monger Gruppe aus Hannover, Deutschland.};
   $tokens->{content_date} = DateTime->now->ymd;
 
   return;
@@ -95,10 +93,8 @@ get q{/} => \&get_index_route;
 
 ############################################################################
 sub get_uptime_route {
-  content_type 'text/plain'; 
-  return 'uptime: '.(time - $^T)." secs\n"
-    ."version: $VERSION\n"
-    ."github version: $VERSION_GIT"
+  content_type 'text/plain';
+  return 'uptime: ' . ( time - $^T ) . " secs\n" . "version: $VERSION\n" . "github version: $VERSION_GIT";
 }
 get q{/uptime} => \&get_uptime_route;
 

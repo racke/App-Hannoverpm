@@ -11,8 +11,8 @@ use utf8;
 
 ############################################################################
 # Get use of other Perl modules.
-use Dancer qw( dance );
-use App::Hannoverpm qw();
+use Dancer;
+use App::Hannoverpm;
 
 ############################################################################
 # Dispatch to Dancer web application.
